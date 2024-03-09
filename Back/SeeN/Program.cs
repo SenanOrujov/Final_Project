@@ -1,4 +1,6 @@
 
+using SeeN.Helpers;
+
 namespace SeeN
 {
     public class Program
@@ -17,7 +19,7 @@ namespace SeeN
             builder.Services.AddAppServices(builder);
 
             var app = builder.Build();
-            
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
