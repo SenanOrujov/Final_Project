@@ -1,1 +1,127 @@
-[]
+[
+  {
+    "ContainingType": "SeeN.Controllers.CinemaHourController",
+    "Method": "CreateCinemaHours",
+    "RelativePath": "api/CinemaHour",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SeeN.DTOs.Cinema.CinemaHour.CinemaHourPostDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeeN.Controllers.HallTypeController",
+    "Method": "GetAllHallTypes",
+    "RelativePath": "api/HallType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SeeN.DTOs.Hall.HallType.HallTypeGetDto, SeeN, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeeN.Controllers.HallTypeController",
+    "Method": "CreateHallType",
+    "RelativePath": "api/HallType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SeeN.DTOs.Hall.HallType.HallTypeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeeN.DTOs.Hall.HallType.HallTypeDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeeN.Controllers.HallTypeController",
+    "Method": "GetHallType",
+    "RelativePath": "api/HallType/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SeeN.DTOs.Hall.HallType.HallTypeGetDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SeeN.Controllers.HallTypeController",
+    "Method": "UpdateHallType",
+    "RelativePath": "api/HallType/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SeeN.DTOs.Hall.HallType.HallTypeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SeeN.Controllers.HallTypeController",
+    "Method": "DeleteHallType",
+    "RelativePath": "api/HallType/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

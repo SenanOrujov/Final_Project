@@ -1,14 +1,10 @@
-﻿namespace SeeN.Entities
+﻿namespace SeeN.DTOs.Hall
 {
-    public class Hall
+    public class HallPostDto
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public int Capacity { get; set; }
         public int CinemaId { get; set; }
         public int HallTypeId { get; set; }
-
-        public Cinema Cinema { get; set; }
-        public HallType HallType { get; set; }
     }
 }

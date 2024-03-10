@@ -7,7 +7,8 @@
         public string Description { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public ICollection<CinemaHour> CinemaHours { get; set; }
+        public List<CinemaHour> CinemaHours { get; set; }
+        public List<Hall> Halls { get; set; }
 
     }
 }

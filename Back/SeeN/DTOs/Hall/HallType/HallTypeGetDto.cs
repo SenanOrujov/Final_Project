@@ -1,0 +1,10 @@
+﻿namespace SeeN.DTOs.Hall.HallType
+{
+    public class HallTypeGetDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+    }
+}

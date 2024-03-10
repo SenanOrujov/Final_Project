@@ -1,4 +1,6 @@
-﻿namespace SeeN.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SeeN.Entities
 {
     public class HallType
     {
@@ -6,6 +8,8 @@
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public ICollection<Hall> Halls { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal Price { get; set; }
+        public List<Hall> Halls { get; set; }
     }
 }
