@@ -55,6 +55,8 @@ namespace SeeN.Controllers
             _context.HallTypes.Add(hallType);
             await _context.SaveChangesAsync();
 
+            var hallTypeGet = _mapper.Map<HallTypeDto>(hallType);
+            return Ok(hallTypeGet);
 
         }
 
@@ -68,6 +70,7 @@ namespace SeeN.Controllers
             _mapper.Map(dto, hallType);
 
             await _context.SaveChangesAsync();
+
             return Ok(hallType);
         }
 

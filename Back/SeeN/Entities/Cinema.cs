@@ -9,6 +9,5 @@
         public string Address { get; set; }
         public List<CinemaHour> CinemaHours { get; set; }
         public List<Hall> Halls { get; set; }
-
     }
 }

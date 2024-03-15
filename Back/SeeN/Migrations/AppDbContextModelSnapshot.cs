@@ -30,7 +30,15 @@ namespace SeeN.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("ImdbLink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -79,8 +87,8 @@ namespace SeeN.Migrations
                     b.Property<int>("CinemaId")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan?>("ClosingTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime?>("ClosingTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("DayOfWeek")
                         .HasColumnType("int");
@@ -88,14 +96,43 @@ namespace SeeN.Migrations
                     b.Property<bool>("IsClosed")
                         .HasColumnType("bit");
 
-                    b.Property<TimeSpan?>("OpeningTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime?>("OpeningTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CinemaId");
 
                     b.ToTable("CinemaHours");
+                });
+
+            modelBuilder.Entity("SeeN.Entities.CinemaMovie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CinemaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CinemaId");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("cinemaMovies");
                 });
 
             modelBuilder.Entity("SeeN.Entities.Director", b =>
@@ -106,13 +143,38 @@ namespace SeeN.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("ImdbLink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Directors");
+                });
+
+            modelBuilder.Entity("SeeN.Entities.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("SeeN.Entities.Hall", b =>
@@ -123,29 +185,27 @@ namespace SeeN.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Capacity")
-                        .HasColumnType("int");
-
                     b.Property<int>("CinemaId")
                         .HasColumnType("int");
 
-                    b.Property<int>("HallTypeId")
+                    b.Property<int>("Column")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MovieId")
+                    b.Property<int>("HallTypeId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Row")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CinemaId");
 
                     b.HasIndex("HallTypeId");
-
-                    b.HasIndex("MovieId");
 
                     b.ToTable("Halls");
                 });
@@ -174,6 +234,23 @@ namespace SeeN.Migrations
                     b.ToTable("HallTypes");
                 });
 
+            modelBuilder.Entity("SeeN.Entities.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
+                });
+
             modelBuilder.Entity("SeeN.Entities.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -189,16 +266,14 @@ namespace SeeN.Migrations
                     b.Property<int>("DirectorId")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan>("Duration")
+                    b.Property<TimeOnly>("Duration")
                         .HasColumnType("time");
 
-                    b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Language")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -214,6 +289,10 @@ namespace SeeN.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DirectorId");
+
+                    b.HasIndex("GenreId");
+
+                    b.HasIndex("LanguageId");
 
                     b.ToTable("Movies");
                 });
@@ -278,7 +357,10 @@ namespace SeeN.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Column")
+                    b.Property<int>("Collum")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("HallId")
                         .HasColumnType("int");
 
                     b.Property<int>("Row")
@@ -288,6 +370,8 @@ namespace SeeN.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("HallId");
 
                     b.ToTable("Seats");
                 });
@@ -301,6 +385,25 @@ namespace SeeN.Migrations
                         .IsRequired();
 
                     b.Navigation("Cinema");
+                });
+
+            modelBuilder.Entity("SeeN.Entities.CinemaMovie", b =>
+                {
+                    b.HasOne("SeeN.Entities.Cinema", "Cinema")
+                        .WithMany()
+                        .HasForeignKey("CinemaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SeeN.Entities.Movie", "Movie")
+                        .WithMany()
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cinema");
+
+                    b.Navigation("Movie");
                 });
 
             modelBuilder.Entity("SeeN.Entities.Hall", b =>
@@ -317,10 +420,6 @@ namespace SeeN.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SeeN.Entities.Movie", null)
-                        .WithMany("Halls")
-                        .HasForeignKey("MovieId");
-
                     b.Navigation("Cinema");
 
                     b.Navigation("HallType");
@@ -329,12 +428,28 @@ namespace SeeN.Migrations
             modelBuilder.Entity("SeeN.Entities.Movie", b =>
                 {
                     b.HasOne("SeeN.Entities.Director", "Director")
-                        .WithMany()
+                        .WithMany("Movies")
                         .HasForeignKey("DirectorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SeeN.Entities.Genre", "Genre")
+                        .WithMany()
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SeeN.Entities.Language", "Language")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Director");
+
+                    b.Navigation("Genre");
+
+                    b.Navigation("Language");
                 });
 
             modelBuilder.Entity("SeeN.Entities.MovieActor", b =>
@@ -375,11 +490,28 @@ namespace SeeN.Migrations
                     b.Navigation("Movie");
                 });
 
+            modelBuilder.Entity("SeeN.Entities.Seat", b =>
+                {
+                    b.HasOne("SeeN.Entities.Hall", null)
+                        .WithMany("Seats")
+                        .HasForeignKey("HallId");
+                });
+
             modelBuilder.Entity("SeeN.Entities.Cinema", b =>
                 {
                     b.Navigation("CinemaHours");
 
                     b.Navigation("Halls");
+                });
+
+            modelBuilder.Entity("SeeN.Entities.Director", b =>
+                {
+                    b.Navigation("Movies");
+                });
+
+            modelBuilder.Entity("SeeN.Entities.Hall", b =>
+                {
+                    b.Navigation("Seats");
                 });
 
             modelBuilder.Entity("SeeN.Entities.HallType", b =>
@@ -390,8 +522,6 @@ namespace SeeN.Migrations
             modelBuilder.Entity("SeeN.Entities.Movie", b =>
                 {
                     b.Navigation("Actors");
-
-                    b.Navigation("Halls");
 
                     b.Navigation("Shows");
                 });

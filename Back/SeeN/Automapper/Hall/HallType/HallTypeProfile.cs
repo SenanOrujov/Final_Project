@@ -9,7 +9,7 @@ namespace SeeN.Automapper.Hall.HallType
         public HallTypeProfile()
         {
             CreateMap<SeeN.Entities.HallType, HallTypeGetDto>();
-            CreateMap<HallTypeDto, SeeN.Entities.HallType>();
+            CreateMap<HallTypeDto, SeeN.Entities.HallType>().ReverseMap();
         }
     }
 }

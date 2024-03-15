@@ -16,5 +16,8 @@ namespace SeeN.Data
         public DbSet<MovieActor> MovieActors { get; set; }
         public DbSet<MovieShow> MovieShows { get; set; }
         public DbSet<Seat> Seats { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<CinemaMovie> cinemaMovies { get; set; }
     }
 }
