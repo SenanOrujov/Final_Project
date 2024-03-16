@@ -1,11 +1,11 @@
 ﻿using SeeN.DTOs.Movie.Actor.MovieActor;
 using SeeN.DTOs.Movie.Show;
-using SeeN.Entities;
 
 namespace SeeN.DTOs.Movie
 {
-    public class MoviePostDto
+    public class MovieGetDto
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public DateOnly Year { get; set; }
         public TimeOnly Duration { get; set; }

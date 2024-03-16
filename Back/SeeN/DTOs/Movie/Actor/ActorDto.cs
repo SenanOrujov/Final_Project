@@ -1,11 +1,9 @@
-﻿namespace SeeN.Entities
+﻿namespace SeeN.DTOs.Movie.Actor
 {
-    public class Director
+    public class ActorDto
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ImdbLink { get; set; }
-        public List<Movie> Movies { get; set; }
     }
 }

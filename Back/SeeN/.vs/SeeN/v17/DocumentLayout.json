@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{026F75FE-0590-414E-B661-D74D65B7CA8D}|SeeN.csproj|c:\\users\\senan\\desktop\\final_project\\back\\seen\\controllers\\movie\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{026F75FE-0590-414E-B661-D74D65B7CA8D}|SeeN.csproj|solutionrelative:controllers\\movie\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{026F75FE-0590-414E-B661-D74D65B7CA8D}|SeeN.csproj|c:\\users\\senan\\desktop\\final_project\\back\\seen\\dtos\\movie\\moviegetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{026F75FE-0590-414E-B661-D74D65B7CA8D}|SeeN.csproj|solutionrelative:dtos\\movie\\moviegetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{026F75FE-0590-414E-B661-D74D65B7CA8D}|SeeN.csproj|c:\\users\\senan\\desktop\\final_project\\back\\seen\\dtos\\movie\\movieputdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{026F75FE-0590-414E-B661-D74D65B7CA8D}|SeeN.csproj|solutionrelative:dtos\\movie\\movieputdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{026F75FE-0590-414E-B661-D74D65B7CA8D}|SeeN.csproj|c:\\users\\senan\\desktop\\final_project\\back\\seen\\automapper\\movie\\movieprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{026F75FE-0590-414E-B661-D74D65B7CA8D}|SeeN.csproj|solutionrelative:automapper\\movie\\movieprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MovieProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\Automapper\\Movie\\MovieProfile.cs",
+              "RelativeDocumentMoniker": "Automapper\\Movie\\MovieProfile.cs",
+              "ToolTip": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\Automapper\\Movie\\MovieProfile.cs",
+              "RelativeToolTip": "Automapper\\Movie\\MovieProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T06:47:51.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MoviePutDto.cs",
+              "DocumentMoniker": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\DTOs\\Movie\\MoviePutDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Movie\\MoviePutDto.cs",
+              "ToolTip": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\DTOs\\Movie\\MoviePutDto.cs",
+              "RelativeToolTip": "DTOs\\Movie\\MoviePutDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T06:44:54.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovieGetDto.cs",
+              "DocumentMoniker": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\DTOs\\Movie\\MovieGetDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Movie\\MovieGetDto.cs",
+              "ToolTip": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\DTOs\\Movie\\MovieGetDto.cs",
+              "RelativeToolTip": "DTOs\\Movie\\MovieGetDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T06:43:56.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovieController.cs",
+              "DocumentMoniker": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\Controllers\\Movie\\MovieController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Movie\\MovieController.cs",
+              "ToolTip": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\Controllers\\Movie\\MovieController.cs",
+              "RelativeToolTip": "Controllers\\Movie\\MovieController.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAqwEAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T06:42:07.225Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
