@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using SeeN.Data;
+using SeeN.Entities;
 using System;
 
 namespace SeeN.Helpers
@@ -12,10 +13,18 @@ namespace SeeN.Helpers
     {
         public static void AddAppServices(this IServiceCollection services, WebApplicationBuilder builder)
         {
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
             builder.Services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
             });
+
+            builder.Services.AddAuthorization();
+
+            builder.Services.AddIdentityApiEndpoints<AppUser>()
+                .AddEntityFrameworkStores<AppDbContext>();
 
             //Auto mapper config 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

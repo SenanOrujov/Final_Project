@@ -1,4 +1,6 @@
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using SeeN.Entities;
 using SeeN.Helpers;
 
 namespace SeeN
@@ -10,11 +12,9 @@ namespace SeeN
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
 
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+
 
             builder.Services.AddAppServices(builder);
 
@@ -27,12 +27,12 @@ namespace SeeN
                 app.UseSwaggerUI();
             }
 
+            app.MapIdentityApi<AppUser>();
+
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
-
             app.UseAuthentication();
-
+            app.UseAuthorization();
 
             app.MapControllers();
 
