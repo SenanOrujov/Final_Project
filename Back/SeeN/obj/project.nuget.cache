@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ymiY0xJqlKqH/w74X/eKU8M91PDUO+WKT1zBd4O55CATGtNm0i2rAIcwiFQ4J2eXFsvxrE+O7dWo1yE8Z4oCkw==",
+  "dgSpecHash": "bv5LraQ/2F/VNEHEqCf9nLJir8G8qQe8ndCMLG2ozOIxX4WjoZeVJGXBwe6y0cKRNlP6oQV6UUEWzKGWx88CxQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\SeeN.csproj",
   "expectedPackageFiles": [
@@ -140,7 +140,10 @@
     "C:\\Users\\Senan\\.nuget\\packages\\nuget.projectmodel\\6.3.1\\nuget.projectmodel.6.3.1.nupkg.sha512",
     "C:\\Users\\Senan\\.nuget\\packages\\nuget.protocol\\6.3.1\\nuget.protocol.6.3.1.nupkg.sha512",
     "C:\\Users\\Senan\\.nuget\\packages\\nuget.versioning\\6.3.1\\nuget.versioning.6.3.1.nupkg.sha512",
+    "C:\\Users\\Senan\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
     "C:\\Users\\Senan\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Senan\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\8.0.1\\swashbuckle.aspnetcore.filters.8.0.1.nupkg.sha512",
+    "C:\\Users\\Senan\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\8.0.1\\swashbuckle.aspnetcore.filters.abstractions.8.0.1.nupkg.sha512",
     "C:\\Users\\Senan\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\Senan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\Senan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
