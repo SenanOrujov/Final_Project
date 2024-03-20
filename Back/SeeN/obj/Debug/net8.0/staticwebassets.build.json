@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "LRFrahs+LoKwaHh6p+WVQiLeyWW7fEO+C8BUC9u14LQ=",
+  "Hash": "8Ws5f7InxkI8N/ocmKkTi0sA8vsk02s0c7iwXYrgtbk=",
   "Source": "SeeN",
   "BasePath": "_content/SeeN",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SeeN\\wwwroot",
+      "Source": "SeeN",
+      "ContentRoot": "C:\\Users\\Senan\\Desktop\\Final_Project\\Back\\SeeN\\wwwroot\\",
+      "BasePath": "_content/SeeN",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

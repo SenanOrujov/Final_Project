@@ -24,10 +24,19 @@ namespace SeeN.Controllers.Movie.Actor
         public async Task<ActionResult<IEnumerable<ActorGetDto>>> GetAllActor()
         {
             var actors = await _context.Actors
-             .Select(x => _mapper.Map<SeeN.Entities.Actor, ActorGetDto>(x))
+             .Select(x => new ActorGetDto
+             {
+                 Name = x.Name,
+                 Surname = x.Surname,
+                 ImdbLink = x.ImdbLink,
+                 ImageFilename = Url.Content($"~/Actor/{x.ImageFilename}")
+
+
+             })
              .ToListAsync();
 
             if (!actors.Any()) return NoContent(); // HTTP 204 No Content
+
 
             return Ok(actors);
         }
@@ -38,6 +47,7 @@ namespace SeeN.Controllers.Movie.Actor
             var actor = await _context.Actors.FindAsync(id);
             if (actor == null) return NotFound();
 
+            actor.ImageFilename = Url.Content($"~/Actor/{actor.ImageFilename}");
 
             var ActorDto = _mapper.Map<SeeN.Entities.Actor, ActorGetDto>(actor);
             return Ok(ActorDto);
@@ -47,6 +57,18 @@ namespace SeeN.Controllers.Movie.Actor
         public async Task<ActionResult<ActorDto>> CreateActor(ActorDto dto)
         {
             var actor = _mapper.Map<ActorDto, SeeN.Entities.Actor>(dto);
+
+            if (dto.Image != null)
+            {
+                var filename = Guid.NewGuid().ToString() + Path.GetExtension(dto.Image.FileName);
+                var imagePath = Path.Combine("wwwroot/Actor", filename); // Resimlerinizi nereye kaydetmek istiyorsanız
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    await dto.Image.CopyToAsync(stream);
+                }
+                actor.ImageFilename = filename;
+            }
+
             _context.Actors.Add(actor);
             await _context.SaveChangesAsync();
 

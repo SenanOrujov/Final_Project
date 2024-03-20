@@ -270,3 +270,4 @@ C:\Users\Senan\Desktop\Final_Project\Back\SeeN\obj\Debug\net8.0\SeeN.sourcelink.
 C:\Users\Senan\Desktop\Final_Project\Back\SeeN\bin\Debug\net8.0\Scrutor.dll
 C:\Users\Senan\Desktop\Final_Project\Back\SeeN\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\Senan\Desktop\Final_Project\Back\SeeN\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\Senan\Desktop\Final_Project\Back\SeeN\bin\Debug\net8.0\SeeN.staticwebassets.runtime.json
