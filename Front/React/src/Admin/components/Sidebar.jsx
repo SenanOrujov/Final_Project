@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { CloseOutlined, UserOutlined } from "@ant-design/icons";
 import Actorsvg from "../../assets/svg/actor.svg";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [showSidebar, setShowSidebar] = useState("translate-x-0");
 
   const onClose = () => {
-    setShowSidebar("-translate-x-80");
+    setShowSidebar("-translate-x-full");
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -16,11 +19,14 @@ const Sidebar = () => {
       >
         <div className='relative'>
           <div className='py-6 px-8 text-center cursor-pointer'>
-            <h6 className='block  tracking-normal  text-base font-semibold leading-relaxed'>
+            <h6
+              onClick={() => navigate("/admin")}
+              className='block  tracking-normal  text-base font-semibold leading-relaxed'
+            >
               Control Panel
             </h6>
             <CloseOutlined
-              className='top-2 right-4 absolute cursor-pointer text-xl hover:rotate-180 transition-all duration-700 hover:text-red-500'
+              className='xl:hidden top-2 right-4 absolute cursor-pointer text-xl hover:rotate-180 transition-all duration-700 hover:text-red-500'
               onClick={onClose}
             />
           </div>
@@ -29,7 +35,10 @@ const Sidebar = () => {
           <ul className='mb-4 flex flex-col gap-1'>
             <li>
               <div>
-                <button className=' align-middle select-none font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-gray-500/10 active:bg-gray-500/30 w-full flex items-center gap-4 px-4 capitalize'>
+                <button
+                  onClick={() => navigate("/admin/actors")}
+                  className=' align-middle select-none font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-gray-500/10 active:bg-gray-500/30 w-full flex items-center gap-4 px-4 capitalize'
+                >
                   <img src={Actorsvg} className='w-8 h-7' />
                   <p className='block font-sans text-lg font-bold leading-relaxed capitalize '>
                     Actors
