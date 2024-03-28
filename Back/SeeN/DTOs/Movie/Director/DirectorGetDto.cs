@@ -6,5 +6,6 @@
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ImdbLink { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
