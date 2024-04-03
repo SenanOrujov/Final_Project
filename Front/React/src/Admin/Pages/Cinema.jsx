@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { DeleteOutlined, PlusOutlined, UserOutlined } from "@ant-design/icons";
 import { message, Popconfirm, Button, Modal, Upload, Input } from "antd";
 import { useQuery, useMutation, useQueryClient } from "react-query";
-import { getAllCinemas } from "../../services/Cinema/cinemaService";
+import {
+  getAllCinemas,
+  deleteCinema,
+} from "../../services/Cinema/cinemaService";
 import AddPage from "../components/Cinema/AddPage";
 import { useNavigate } from "react-router-dom";
+import EditPage from "../components/Cinema/EditPage";
 
 const Cinema = () => {
   const queryClient = useQueryClient();
@@ -27,14 +31,17 @@ const Cinema = () => {
     navigation("/admin/cinema/add");
   };
   //edit modal
-  const [openEditModel, setOpenEditModel] = useState(false);
-  const showEditModal = (Cinema) => {
-    setOpenEditModel(true);
-    setEditCinema(Cinema);
-  };
+  const [openEditPage, setOpenEditPage] = useState(false);
 
   //set ID
   const [editCinema, setEditCinema] = useState({});
+  console.log(editCinema);
+
+  const showEditPage = (Cinema) => {
+    setEditCinema(Cinema);
+    // setOpenEditPage(true);
+    // navigation("/admin/cinema/edit");
+  };
 
   //delete
   const handleDeleteConfirm = async (CinemaId) => {
@@ -96,11 +103,6 @@ const Cinema = () => {
                     Description
                   </p>
                 </th>
-                <th className='border-b border-gray-50 py-3 px-5 text-left'>
-                  <p className='block antialiased font-sans text-[11px] font-bold uppercase text-gray-400'>
-                    Price
-                  </p>
-                </th>
               </tr>
             </thead>
             <tbody>
@@ -138,28 +140,19 @@ const Cinema = () => {
                       </div>
                     </td>
                     <td className='py-3 px-5 border-b border-gray-50'>
-                      <div className='flex items-center gap-4'>
-                        <div>
-                          <p className='block antialiased font-sans text-sm leading-normal text-gray-900 font-semibold capitalize'>
-                            {Cinema.price}
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                    <td className='py-3 px-5 border-b border-gray-50'>
                       <div
                         onClick={() => {
-                          showEditModal(Cinema);
+                          showEditPage(Cinema);
                         }}
                         className='block antialiased  text-xs font-semibold text--gray-600 hover:text-yellow-500 hover:cursor-pointer'
                       >
                         Edit
                       </div>
-                      {openEditModel && (
-                        <EditModal
-                          open={openEditModel}
-                          setOpenEditModel={setOpenEditModel}
-                          Cinema={editCinema}
+                      {openEditPage && (
+                        <EditPage
+                          open={openEditPage}
+                          setOpenEditPage={setOpenEditPage}
+                          cinema={editCinema}
                         />
                       )}
                     </td>

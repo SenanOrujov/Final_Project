@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { CloseOutlined, UserOutlined } from "@ant-design/icons";
 import Actorsvg from "../../assets/svg/actor.svg";
 import { useNavigate } from "react-router-dom";
+import Genresvg from "../../assets/svg/genre.svg";
+import Languagesvg from "../../assets/svg/language.svg";
+import Directorsvg from "../../assets/svg/director.svg";
+import HallTypesvg from "../../assets/svg/halltype.svg";
+import MovieSvg from "../../assets/svg/hall.svg";
+import Cinemasvg from "../../assets/svg/cinema.svg";
 
 const Sidebar = () => {
   const [showSidebar, setShowSidebar] = useState("translate-x-0");
@@ -42,6 +48,84 @@ const Sidebar = () => {
                   <img src={Actorsvg} className='w-8 h-7' />
                   <p className='block font-sans text-lg font-bold leading-relaxed capitalize '>
                     Actors
+                  </p>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <button
+                  onClick={() => navigate("/admin/genre")}
+                  className=' align-middle select-none font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-gray-500/10 active:bg-gray-500/30 w-full flex items-center gap-4 px-4 capitalize'
+                >
+                  <img src={Genresvg} className='w-8 h-7' />
+                  <p className='block font-sans text-lg font-bold leading-relaxed capitalize '>
+                    Genres
+                  </p>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <button
+                  onClick={() => navigate("/admin/language")}
+                  className=' align-middle select-none font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-gray-500/10 active:bg-gray-500/30 w-full flex items-center gap-4 px-4 capitalize'
+                >
+                  <img src={Languagesvg} className='w-8 h-7' />
+                  <p className='block font-sans text-lg font-bold leading-relaxed capitalize '>
+                    Languages
+                  </p>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <button
+                  onClick={() => navigate("/admin/director")}
+                  className=' align-middle select-none font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-gray-500/10 active:bg-gray-500/30 w-full flex items-center gap-4 px-4 capitalize'
+                >
+                  <img src={Directorsvg} className='w-8 h-7' />
+                  <p className='block font-sans text-lg font-bold leading-relaxed capitalize '>
+                    Directors
+                  </p>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <button
+                  onClick={() => navigate("/admin/halltype")}
+                  className=' align-middle select-none font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-gray-500/10 active:bg-gray-500/30 w-full flex items-center gap-4 px-4 capitalize'
+                >
+                  <img src={HallTypesvg} className='w-8 h-7' />
+                  <p className='block font-sans text-lg font-bold leading-relaxed capitalize '>
+                    Hall types
+                  </p>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <button
+                  onClick={() => navigate("/admin/cinema")}
+                  className=' align-middle select-none font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-gray-500/10 active:bg-gray-500/30 w-full flex items-center gap-4 px-4 capitalize'
+                >
+                  <img src={Cinemasvg} className='w-8 h-7' />
+                  <p className='block font-sans text-lg font-bold leading-relaxed capitalize '>
+                    Cinemas
+                  </p>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <button
+                  onClick={() => navigate("/admin/movies")}
+                  className=' align-middle select-none font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-gray-500/10 active:bg-gray-500/30 w-full flex items-center gap-4 px-4 capitalize'
+                >
+                  <img src={MovieSvg} className='w-8 h-7' />
+                  <p className='block font-sans text-lg font-bold leading-relaxed capitalize '>
+                    Movies
                   </p>
                 </button>
               </div>
